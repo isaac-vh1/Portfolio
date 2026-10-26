@@ -8,7 +8,8 @@ export default function RedirectHandler() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const redirect = params.get("redirect");
-    if (redirect) {
+    // Only follow same-site paths (e.g. "/titan"), never "//host" or "https://..."
+    if (redirect && redirect.startsWith("/") && !redirect.startsWith("//")) {
       navigate(redirect, { replace: true });
     }
   }, [navigate]);

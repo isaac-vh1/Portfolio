@@ -1,11 +1,14 @@
 import React from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import demos from "./demos";
 
 export default function DemoFrame() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const url = searchParams.get("url");
-  const title = searchParams.get("title") || "Demo";
+  const id = searchParams.get("id");
+  const demo = Object.prototype.hasOwnProperty.call(demos, id) ? demos[id] : null;
+  const title = demo ? demo.title : "Demo";
+  const DemoComponent = demo && demo.component;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -60,9 +63,13 @@ export default function DemoFrame() {
       </div>
 
       {/* iframe */}
-      {url ? (
+      {DemoComponent ? (
+        <div style={{ flex: 1, overflow: "auto" }}>
+          <DemoComponent />
+        </div>
+      ) : demo ? (
         <iframe
-          src={url}
+          src={demo.url}
           title={title}
           style={{ flex: 1, border: "none", width: "100%" }}
         />
@@ -77,7 +84,7 @@ export default function DemoFrame() {
             color: "#666",
           }}
         >
-          No demo URL provided.
+          Demo not found.
         </div>
       )}
     </div>

@@ -51,7 +51,7 @@ const Card = ({ title, description, imageSrc, url, status, programmingLanguage, 
           </Button>
           )}
           {demo && (
-            <Button variant="link" onClick={() => navigate(`/demo?url=${encodeURIComponent(demo)}&title=${encodeURIComponent(title)}`)} colorScheme="teal" rightIcon={<FontAwesomeIcon icon={faArrowRight} size="1x" />}>
+            <Button variant="link" onClick={() => navigate(`/demo?id=${encodeURIComponent(demo)}`)} colorScheme="teal" rightIcon={<FontAwesomeIcon icon={faArrowRight} size="1x" />}>
               Demo
             </Button>
           )}
