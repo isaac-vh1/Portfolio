@@ -4,6 +4,7 @@ import Timer from "./timer";
 import Layout from "./layout"
 import Titan from "./titan";
 import DemoFrame from "./DemoFrame";
+import { Privacy, Terms } from "./legal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
@@ -15,6 +16,8 @@ const router = createBrowserRouter([
       { path: 'timer', element: <Timer /> },
       { path: 'titan', element: <Titan /> },
       { path: 'demo', element: <DemoFrame /> },
+      { path: 'privacy', element: <Privacy /> },
+      { path: 'terms', element: <Terms /> },
       { path: '*', element: <Navigate to="/" /> },
     ],
   },

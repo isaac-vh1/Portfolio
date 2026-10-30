@@ -7,10 +7,14 @@ const demos = {
     title: "Ground Control (ERP)",
     url: "https://isaac-vh1.github.io/ERP-Demo/",
   },
-  titan: {
+  Unavailable: {
     title: "Titan Remote",
     component: Titan,
   },
+  berps: {
+    title : "ERP Simulation",
+    url: "https://isaac-vh1.github.io/berps/",
+  }
 };
 
 export default demos;

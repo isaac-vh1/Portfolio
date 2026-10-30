@@ -1,6 +1,8 @@
 import React from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 import demos from "./demos";
+import Footer from "./components/Footer";
 
 export default function DemoFrame() {
   const [searchParams] = useSearchParams();
@@ -87,6 +89,13 @@ export default function DemoFrame() {
           Demo not found.
         </div>
       )}
+
+      {/* Footer */}
+      <div style={{ flexShrink: 0 }}>
+        <ChakraProvider>
+          <Footer />
+        </ChakraProvider>
+      </div>
     </div>
   );
 }
