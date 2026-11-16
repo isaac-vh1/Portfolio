@@ -5,8 +5,8 @@ import isaac from "../images/isaac.jpeg";
 import bgImage from "../images/IMG_9761.jpeg";
 
 const greeting = "Hello, I am Isaac!";
-const bio1 = "A Computer Science student at Seattle University";
-const bio2 = "I am passionate about software development and love to create projects that solve real-world problems.";
+const bio1 = "A Computer Science graduate from Seattle University";
+const bio2 = "I am looking for full time opportunities in software development. Feel free to reach out to me via email or LinkedIn!";
 
 const LandingSection = () => (
   <FullScreenSection
